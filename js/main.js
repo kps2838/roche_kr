@@ -145,15 +145,19 @@ $(function(){
 
 
     // faq 더보기 버튼
-    $('#faq .container .info-box .title > button').click(function(){
-        // $('#faq .container .info-box').removeClass('on');
-        $(this).parent().parent().toggleClass('on');
-        // $(this).find('img').attr('src', './images/minus.svg');
+
+    $('#faq .container .info-box .title').click(function(){
+        if($(this).parent().hasClass('on')){
+            $('#faq .container .info-box button img').attr('src', './images/plus_icon.svg');
+            $('#faq .container .info-box').removeClass('on');
+        } else{
+            $('#faq .container .info-box button img').attr('src', './images/plus_icon.svg');
+            $('#faq .container .info-box').removeClass('on');
+            $(this).parent().addClass('on');
+            $(this).find('button').find('img').attr('src', './images/minus_icon.svg');
+        }
     });
 
-    $('#faq .container .info-box .title > h4').click(function(){
-        $(this).parent().parent().toggleClass('on');
-    });    
 
         // 사회공헌 js
 
